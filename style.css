@@ -1,0 +1,83 @@
+.container{
+  border: 5px solid blue;
+  display: flex;
+  width: 400px;
+  height: 400px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#number{
+  color:black;
+  background-color: cornsilk;
+  height: 30%;
+  width: 30%;
+  border-radius: 20px;
+}
+
+input{
+  display: flex;
+  align-self: center;
+  margin-bottom: auto;
+  width: 400px;
+  height: 35px;
+  border-radius: 20px;
+  text-align: right;
+}
+
+#decimal{
+  background-color: cornsilk;
+  height: 30%;
+  width: 30%;
+  border-radius: 20px;
+}
+
+#equals{
+  background-color: green ;
+  height: 30%;
+  width: 30%;
+  border-radius: 20px;
+}
+
+.operator{
+  background-color: orange ;
+  height: 30%;
+  width: 30%;
+  border-radius: 20px;
+}
+
+#clear{
+  background-color: red;
+  height: 30%;
+  width: 60;
+  border-radius: 20px;
+}
+
+.clear-row{
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row-one{
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-two{
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-three{
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-four{
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
