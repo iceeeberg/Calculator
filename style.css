@@ -2,17 +2,24 @@
   border: 5px solid blue;
   display: flex;
   width: 400px;
-  height: 400px;
-  justify-content: space-evenly;
+  height: 450px;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
-#number{
+.number{
   color:black;
   background-color: cornsilk;
-  height: 30%;
-  width: 30%;
   border-radius: 20px;
+  font-size: 2rem;
+  margin: 2px 2px 2px 0px;
+  padding: 15px;
+  width: 33.3333%;
+  cursor: pointer;
+}
+
+.number:hover{
+  background-color: slateblue;
 }
 
 input{
@@ -27,57 +34,102 @@ input{
 
 #decimal{
   background-color: cornsilk;
-  height: 30%;
-  width: 30%;
   border-radius: 20px;
+  font-size: 2rem;
+  margin: 2px 2px 2px 0px;
+  padding: 15px;
+  width: 33.3333%;
+  cursor: pointer;
+}
+
+#decimal:hover{
+  background-color: slateblue;
 }
 
 #equals{
   background-color: green ;
-  height: 30%;
-  width: 30%;
+  font-size: 2rem;
+  margin: 2px 2px 2px 0px;
+  padding: 15px;
+  width: 33.3333%;
   border-radius: 20px;
+  cursor: pointer;
+}
+
+#equals:hover{
+  background-color: slateblue;
 }
 
 .operator{
   background-color: orange ;
-  height: 30%;
-  width: 30%;
+  font-size: 2rem;
+  margin: 2px 2px 2px 0px;
+  padding: 15px;
+  width: 33.3333%;
   border-radius: 20px;
+  cursor: pointer;
+}
+
+.operator:hover{
+  background-color: slateblue;
 }
 
 #clear{
   background-color: red;
-  height: 30%;
-  width: 60;
+  font-size: 2rem;
+  margin: 2px 2px 2px 0px;
+  padding: 15px;
+  width: 66.6666%;
   border-radius: 20px;
+  cursor: pointer;
+}
+
+#clear:hover{
+  background-color: slateblue;
+}
+
+#delete{
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+  margin: 2px 2px 2px 0px;
+  padding: 15px;
+  width: 33.3333%;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#delete:hover{
+  background-color: slateblue;
 }
 
 .clear-row{
-  align-items: center;
-  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  width: 100%
 }
 
+
 .row-one{
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%
 }
 
 .row-two{
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%
 }
 
 .row-three{
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%
 }
 
 .row-four{
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%
 }
