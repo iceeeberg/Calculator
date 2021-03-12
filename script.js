@@ -2,35 +2,61 @@
 
 const displayElement = document.getElementById('input');
 const numbers = document.querySelectorAll('.number');
-const numberInput = numbers.textContent
 
-let firstInput = '';
-let operator = null;
-let secondInput = '';
-let equalTo = false;
-
+let firstNumber = "";
+let secondNumber = "";
+let operand = "";
 
 numbers.forEach(numberButton => {
   numberButton.addEventListener('click', (e) => {
     const numberInput = e.target.textContent;
     displayElement.value += numberInput
 
-    // if(firstInput && !operator && equalTo) {
-    //   firstInput = '';
-    //   equalTo = false;
-    // }
+    if (operand === "") { 
+      firstNumber += e.target.textContent;
+    }
 
-    // if (!operator) {
-    //   firstInput += numberInput;
-    //   displayElement.value = firstInput
-    // }
-
-    // if (firstInput && operator) {
-    //   secondInput += numberInput;
-    //   displayElement.value = secondOperand;
-    // }
+    else {
+      secondNumber += e.target.textContent;
+    }
   })   
 });
+
+
+//operators
+
+const operators = document.querySelectorAll('operator')
+
+operators.forEach(operatorButton => {
+  operatorButton.addEventListener('click', (e) => {
+    if (e.target.innerText !== "=") {
+      operator = e.target.innerText;
+
+      displayElement.value(firstNumber);
+      displayElement.value(operand)
+  }
+    else {
+      displayElement.value(secondNumber);
+
+    }
+      switch(operator) {
+        case "+":
+          displayElement.value(parseInt(firstNumber) + parseInt(secondNumber));
+
+        case "-":
+          displayElement.value(parseInt(firstNumber) - parseInt(secondNumber));
+
+        case "x":
+          displayElement.value(parseInt(firstNumber) * parseInt(secondNumber));
+
+        case "/":
+          displayElement.value(parseInt(firstNumber) / parseInt(secondNumber));
+
+      default:
+        break
+      }
+  })
+})
 
 
 // delete numbers
@@ -46,19 +72,11 @@ deleteInput.addEventListener('click', (e) => {
 const clearInput = document.getElementById('clear')
 
 clearInput.addEventListener('click', (e) => {
-  const clear =  0;
-  displayElement.value = clear
+  displayElement.value = 0
+  firstNumber = null
+  operator = null
+  secondNumber = null
 });
-
-// calculate numbers 
-
-const newDisplay = document.createElement('input');
-const addition = document.getElementById('add');
-
-addition.addEventListener('click', (e) => {
-  return numberInput.displayElement + numberInput.newDisplay
-});
-
 
 
 
