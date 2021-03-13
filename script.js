@@ -39,22 +39,23 @@ operators.forEach(operatorButton => {
 const equalsButton = document.getElementById('equals');
 equalsButton.addEventListener('click', (e) => {
   e.preventDefault();
-  calculate();
+  operand = calculate();
+   
 });
 
 function calculate(firstNumber, secondNumber) {
   switch(operand) {
     case "+":
-      return parseFloat(displayElement.value) = parseFloat(firstNumber) + parseFloat(secondNumber);
+      return displayElement.value = parseFloat(firstNumber) + parseFloat(secondNumber);
 
     case "-":
-      return parseFloat(displayElement.value) = parseFloat(firstNumber) - parseFloat(secondNumber);
+      return displayElement.value  = parseFloat(firstNumber) - parseFloat(secondNumber);
 
     case "x":
-      return parseFloat(displayElement.value) = parseFloat(firstNumber) * parseFloat(secondNumber);
+      return displayElement.value = parseFloat(firstNumber) * parseFloat(secondNumber);
 
     case "/":
-      return parseFloat(displayElement.value) = parseFloat(firstNumber) / parseFloat(secondNumber);
+      return displayElement.value = parseFloat(firstNumber) / parseFloat(secondNumber);
 
   default:
     break
