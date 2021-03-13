@@ -15,6 +15,7 @@ numbers.forEach(numberButton => {
       displayElement.value = firstNumber;
       console.log('firstNumber: ', firstNumber)
     }
+
     else {
       secondNumber = e.target.textContent;
       displayElement.value = secondNumber;
@@ -23,6 +24,23 @@ numbers.forEach(numberButton => {
   })   
 });
 
+//decimal 
+
+const decimal = document.getElementById('decimal');
+decimal.addEventListener('click', (e) => {
+
+  if (firstNumber === null){
+  displayElement.value = decimal.textContent;
+  }
+
+  if (secondNumber === null){
+    displayElement.value = decimal.textContent;
+    }
+
+  else {
+    displayElement.value = decimal.textContent;
+  }
+})
 
 //operators
 
@@ -39,23 +57,26 @@ operators.forEach(operatorButton => {
 const equalsButton = document.getElementById('equals');
 equalsButton.addEventListener('click', (e) => {
   e.preventDefault();
-  operand = calculate();
-   
+  operand = calculate(parseFloat(firstNumber), parseFloat(secondNumber));
 });
 
 function calculate(firstNumber, secondNumber) {
   switch(operand) {
     case "+":
-      return displayElement.value = parseFloat(firstNumber) + parseFloat(secondNumber);
-
+      displayElement.value = parseFloat(firstNumber) + parseFloat(secondNumber);
+      break
+    
     case "-":
-      return displayElement.value  = parseFloat(firstNumber) - parseFloat(secondNumber);
+      displayElement.value  = parseFloat(firstNumber) - parseFloat(secondNumber);
+      break 
 
     case "x":
-      return displayElement.value = parseFloat(firstNumber) * parseFloat(secondNumber);
+      displayElement.value = parseFloat(firstNumber) * parseFloat(secondNumber);
+      break
 
     case "/":
-      return displayElement.value = parseFloat(firstNumber) / parseFloat(secondNumber);
+      displayElement.value = parseFloat(firstNumber) / parseFloat(secondNumber);
+      break
 
   default:
     break
