@@ -1,6 +1,7 @@
 //get number to appear after pressing button 
 
 const displayElement = document.getElementById('input');
+
 const numbers = document.querySelectorAll('.number');
 
 let firstNumber = null;
@@ -15,7 +16,7 @@ numbers.forEach(numberButton => {
       displayElement.value = firstNumber;
       console.log('firstNumber: ', firstNumber)
     }
-
+    
     else {
       secondNumber = e.target.textContent;
       displayElement.value = secondNumber;
@@ -29,11 +30,11 @@ numbers.forEach(numberButton => {
 const decimal = document.getElementById('decimal');
 decimal.addEventListener('click', (e) => {
 
-  if (firstNumber === null){
-  displayElement.value = decimal.textContent;
+  if (firstNumber !== null){
+  decimal.textContent.appendChild(firstNumber);
   }
 
-  if (secondNumber === null){
+  if (secondNumber !== null){
     displayElement.value = decimal.textContent;
     }
 
@@ -50,35 +51,32 @@ operators.forEach(operatorButton => {
   operatorButton.addEventListener('click', (e) => {
     operand = e.target.innerText;
     console.log('operand:' , operand);
-
   });
 });
 
 const equalsButton = document.getElementById('equals');
 equalsButton.addEventListener('click', (e) => {
   e.preventDefault();
-  operand = calculate(parseFloat(firstNumber), parseFloat(secondNumber));
+  const result = calculate(parseFloat(firstNumber), parseFloat(secondNumber));
+  displayElement.value = result 
+  firstNumber = result
 });
 
 function calculate(firstNumber, secondNumber) {
   switch(operand) {
     case "+":
-      displayElement.value = parseFloat(firstNumber) + parseFloat(secondNumber);
-      break
-    
+      return parseFloat(firstNumber) + parseFloat(secondNumber);
+      
     case "-":
-      displayElement.value  = parseFloat(firstNumber) - parseFloat(secondNumber);
-      break 
-
+      return parseFloat(firstNumber) - parseFloat(secondNumber);
+     
     case "x":
-      displayElement.value = parseFloat(firstNumber) * parseFloat(secondNumber);
-      break
-
+      return  parseFloat(firstNumber) * parseFloat(secondNumber);
+      
     case "/":
-      displayElement.value = parseFloat(firstNumber) / parseFloat(secondNumber);
-      break
-
-  default:
+      return  parseFloat(firstNumber) / parseFloat(secondNumber);
+     
+    default:
     break
   };
 };
@@ -96,9 +94,9 @@ deleteInput.addEventListener('click', (e) => {
 const clearInput = document.getElementById('clear')
 
 clearInput.addEventListener('click', (e) => {
-  const clear = 0
-  displayElement.value = clear
+  ;
 });
+
 
 
 
