@@ -3,21 +3,22 @@
 const displayElement = document.getElementById('input');
 const numbers = document.querySelectorAll('.number');
 
-let firstNumber = "";
-let secondNumber = "";
-let operand = "";
+let firstNumber = null;
+let secondNumber = null;
+let operand = null;
 
 numbers.forEach(numberButton => {
   numberButton.addEventListener('click', (e) => {
-    const numberInput = e.target.textContent;
-    displayElement.value += numberInput
-
-    if (operand === "") { 
-      firstNumber += e.target.textContent;
+    
+    if (operand == null) { 
+      firstNumber = e.target.textContent;
+      displayElement.value = firstNumber;
+      console.log('firstNumber: ', firstNumber)
     }
-
     else {
-      secondNumber += e.target.textContent;
+      secondNumber = e.target.textContent;
+      displayElement.value = secondNumber;
+      console.log('secondNumber: ', secondNumber)
     }
   })   
 });
@@ -25,39 +26,40 @@ numbers.forEach(numberButton => {
 
 //operators
 
-const operators = document.querySelectorAll('operator')
+const operators = document.querySelectorAll('.operator')
 
 operators.forEach(operatorButton => {
   operatorButton.addEventListener('click', (e) => {
-    if (e.target.innerText !== "=") {
-      operator = e.target.innerText;
+    operand = e.target.innerText;
+    console.log('operand:' , operand);
 
-      displayElement.value(firstNumber);
-      displayElement.value(operand)
-  }
-    else {
-      displayElement.value(secondNumber);
+  });
+});
 
-    }
-      switch(operator) {
-        case "+":
-          displayElement.value(parseInt(firstNumber) + parseInt(secondNumber));
+const equalsButton = document.getElementById('equals');
+equalsButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  calculate();
+});
 
-        case "-":
-          displayElement.value(parseInt(firstNumber) - parseInt(secondNumber));
+function calculate(firstNumber, secondNumber) {
+  switch(operand) {
+    case "+":
+      return parseFloat(displayElement.value) = parseFloat(firstNumber) + parseFloat(secondNumber);
 
-        case "x":
-          displayElement.value(parseInt(firstNumber) * parseInt(secondNumber));
+    case "-":
+      return parseFloat(displayElement.value) = parseFloat(firstNumber) - parseFloat(secondNumber);
 
-        case "/":
-          displayElement.value(parseInt(firstNumber) / parseInt(secondNumber));
+    case "x":
+      return parseFloat(displayElement.value) = parseFloat(firstNumber) * parseFloat(secondNumber);
 
-      default:
-        break
-      }
-  })
-})
+    case "/":
+      return parseFloat(displayElement.value) = parseFloat(firstNumber) / parseFloat(secondNumber);
 
+  default:
+    break
+  };
+};
 
 // delete numbers
 
@@ -72,10 +74,8 @@ deleteInput.addEventListener('click', (e) => {
 const clearInput = document.getElementById('clear')
 
 clearInput.addEventListener('click', (e) => {
-  displayElement.value = 0
-  firstNumber = null
-  operator = null
-  secondNumber = null
+  const clear = 0
+  displayElement.value = clear
 });
 
 
