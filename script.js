@@ -4,31 +4,26 @@ const displayElement = document.getElementById('input');
 
 const numbers = document.querySelectorAll('.number');
 
-let firstNumber = null;
-let secondNumber = null;
-let operand = null;
+let firstNumber = "";
+let secondNumber = "";
+let operand = "";
 
 numbers.forEach(numberButton => {
   numberButton.addEventListener('click', (e) => {
    
-    if (operand == null) { 
-      firstNumber = e.target.textContent;
-      displayElement.value += firstNumber
+    if (!operand) { 
+      firstNumber += e.target.textContent;
+      displayElement.value = firstNumber
       console.log('firstNumber: ', firstNumber)
     }
     
     else {
-      secondNumber = e.target.textContent;
-      displayElement.value += secondNumber ;
+      secondNumber += e.target.textContent;
+      displayElement.value = secondNumber ;
       console.log('secondNumber: ', secondNumber)
     }
   })   
 });
-
-
-
-//decimal 
-
 
 
 //operators
@@ -79,7 +74,6 @@ deleteInput.addEventListener('click', (e) => {
 
 //reset to 0
 
-const clearInput = document.getElementById('clear')
 
 
 
