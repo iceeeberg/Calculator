@@ -10,38 +10,26 @@ let operand = null;
 
 numbers.forEach(numberButton => {
   numberButton.addEventListener('click', (e) => {
-    
+   
     if (operand == null) { 
       firstNumber = e.target.textContent;
-      displayElement.value = firstNumber;
+      displayElement.value += firstNumber
       console.log('firstNumber: ', firstNumber)
     }
     
     else {
       secondNumber = e.target.textContent;
-      displayElement.value = secondNumber;
+      displayElement.value += secondNumber ;
       console.log('secondNumber: ', secondNumber)
     }
   })   
 });
 
+
+
 //decimal 
 
-const decimal = document.getElementById('decimal');
-decimal.addEventListener('click', (e) => {
 
-  if (firstNumber !== null){
-  decimal.textContent.appendChild(firstNumber);
-  }
-
-  if (secondNumber !== null){
-    displayElement.value = decimal.textContent;
-    }
-
-  else {
-    displayElement.value = decimal.textContent;
-  }
-})
 
 //operators
 
@@ -93,9 +81,7 @@ deleteInput.addEventListener('click', (e) => {
 
 const clearInput = document.getElementById('clear')
 
-clearInput.addEventListener('click', (e) => {
-  ;
-});
+
 
 
 
