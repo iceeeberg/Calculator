@@ -1,7 +1,6 @@
 //get number to appear after pressing button 
 
 const displayElement = document.getElementById('input');
-
 const numbers = document.querySelectorAll('.number');
 
 let firstNumber = "";
@@ -39,10 +38,10 @@ operators.forEach(operatorButton => {
 
 const equalsButton = document.getElementById('equals');
 equalsButton.addEventListener('click', (e) => {
-  e.preventDefault();
   const result = calculate(parseFloat(firstNumber), parseFloat(secondNumber));
   displayElement.value = result 
   firstNumber = result
+  secondNumber = ""
 });
 
 function calculate(firstNumber, secondNumber) {
@@ -64,16 +63,24 @@ function calculate(firstNumber, secondNumber) {
   };
 };
 
-// delete numbers
-
-const deleteInput = document.getElementById('delete');
-
-deleteInput.addEventListener('click', (e) => {
-  displayElement.value = displayElement.value.slice(0, -1)
-})
-
 //reset to 0
 
+const resetButton = document.getElementById('clear');
+
+resetButton.addEventListener('click', (e) => {
+  firstNumber= "";
+  secondNumber= "";
+  operand ="";
+  displayElement.value = 0;
+  })
+
+//delete number 
+
+const deleteInput = document.getElementById('delete');
+  deleteInput.addEventListener('click', (e) => {
+    displayElement.value = firstNumber.slice(0,-1);
+  })
+  
 
 
 
