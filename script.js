@@ -47,11 +47,11 @@ function calculate() {
 	switch (operand) {
 		case '+':
 			return `${parseFloat(firstNumber) + parseFloat(secondNumber)}`;
-    case '-':
+    		case '-':
 			return `${parseFloat(firstNumber) - parseFloat(secondNumber)}`;
-    case 'x':
+    		case 'x':
 			return `${parseFloat(firstNumber) * parseFloat(secondNumber)}`;
-    case '/':
+   		 case '/':
 			return `${parseFloat(firstNumber) / parseFloat(secondNumber)}`;
 	};
 };
@@ -59,7 +59,7 @@ function calculate() {
 document.getElementById('clear').addEventListener('click', (e) => {
 	firstNumber = "";
 	secondNumber = "";
-  operand = "";
+  	operand = "";
 	displayElement.value = 0;
 });
 
