@@ -12,4 +12,4 @@ Building this applicaiton taught me the importance of using the developer tools 
 
 ## Author 
 
-Dante Leeseberg - Full Stack Software Developer [LinkedIn](https://www.linkedin.com/in/dante-leeseberg-bba05883/)
+Dante Leeseberg - Full Stack Software Developer [LinkedIn](https://www.linkedin.com/in/dante-leeseberg-bba05883/) | [Website](https://www.danteleeseberg.com/)
